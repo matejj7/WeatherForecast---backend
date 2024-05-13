@@ -1,5 +1,5 @@
 # Stage 1: Build the application
-FROM maven:4.0.0-jdk-17 as builder
+FROM maven:3.8.6-jdk-17 as builder
 WORKDIR /pogoda
 
 # Copy the source code and other necessary files
