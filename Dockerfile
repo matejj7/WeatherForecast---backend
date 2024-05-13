@@ -1,5 +1,5 @@
 # Stage 1: Build the application
-FROM maven:3.8-jdk-17 as builder
+FROM maven:3.8.4-openjdk-17 as builder
 WORKDIR /pogoda
 
 # Copy the source code and other necessary files
@@ -10,7 +10,7 @@ COPY ./src ./src
 RUN mvn clean package -DskipTests
 
 # Stage 2: Setup the run environment
-FROM openjdk:17-jre-slim
+FROM openjdk:17-jdk-slim
 WORKDIR /pogoda
 
 # Copy the built JAR file from the build stage
